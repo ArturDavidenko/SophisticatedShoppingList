@@ -1,5 +1,16 @@
 <p>shopping-page-list works!</p>
 
 <div>
-    <app-shopping-item />
+    <button (click)="onAddItem()">Add item</button>
+
+    <div>
+    <div *ngFor="let item of items$ | async">
+        
+        <app-shopping-item
+        [item]="item"
+        (delete)="onDeleteItem($event)">
+        </app-shopping-item>
+
+    </div>
+    </div>
 </div>

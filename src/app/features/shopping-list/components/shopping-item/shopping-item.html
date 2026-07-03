@@ -1,1 +1,11 @@
 <p>COOOOOLLL shopping-item works!</p>
+
+
+<div>
+  <p>Title: {{ item.title }}</p>
+  <p>Quantity: {{ item.quantity }}</p>
+  <p>Completed: {{ item.isCompleted }}</p>
+  <p>Created: {{ item.createdAt }}</p>
+
+  <button (click)="onDelete()">Delete</button>
+</div>
