@@ -1,10 +1,10 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, NgModule, Output } from '@angular/core';
 import { Item } from '../../../../core/item/models/item-model';
-import { DatePipe } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-shopping-item',
-  imports: [DatePipe],
+  imports: [DatePipe, CommonModule],
   templateUrl: './shopping-item.html',
   styleUrl: './shopping-item.scss',
 })

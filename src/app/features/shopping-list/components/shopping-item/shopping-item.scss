@@ -3,15 +3,17 @@
 .item-card {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 
   background: $color-surface;
   border: 1px solid $color-border;
-  border-radius: 8px;
+  border-radius: 10px;
 
   padding: $space-4;
 
   transition: 0.2s ease;
+
+  min-height: 160px;
 }
 
 .item-card:hover {
@@ -23,6 +25,13 @@
   display: flex;
   flex-direction: column;
   gap: $space-2;
+
+  flex: 1;
+}
+
+.meta-value {
+  color: $color-text-primary;
+  font-weight: 500;
 }
 
 .item-card__title {
@@ -33,23 +42,80 @@
 
 .item-card__meta {
   display: flex;
-  gap: $space-4;
-  font-size: 12px;
+  flex-direction: column;
+  gap: 6px;
+
+  font-size: 13px;
   color: $color-text-secondary;
+}
+
+.meta-row {
+  padding: 2px 0;
 }
 
 .item-card__date {
   font-size: 11px;
   color: $color-text-secondary;
+  margin-top: $space-2;
 }
 
-.item-card__actions button {
-  background: $color-danger;
-  color: white;
+.item-card__actions {
+  display: flex;
+  flex-direction: row;
+  gap: $space-2;
 
+  align-self: flex-end;
+  margin-top: auto;     
+}
+
+.btn-edit,
+.btn-delete {
   border: none;
-  padding: $space-2 $space-3;
   border-radius: 6px;
 
+  padding: $space-2 $space-3;
   cursor: pointer;
+
+  font-size: 13px;
+  transition: 0.2s ease;
+}
+
+.btn-edit {
+  background: $color-primary;
+  color: white;
+}
+
+.btn-edit:hover {
+  opacity: 0.9;
+}
+
+.btn-delete {
+  background: $color-danger;
+  color: white;
+}
+
+.btn-delete:hover {
+  opacity: 0.9;
+}
+
+.status-badge {
+  padding: 2px 8px;
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  display: inline-block;
+}
+
+.status-badge.done {
+  background: #e6f7ee;
+  color: #1a7f37;
+  border: 1px solid #b7ebc6;
+}
+
+.status-badge.active {
+  background: #eef4ff;
+  color: #1f5eff;
+  border: 1px solid #c7d6ff;
 }

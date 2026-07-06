@@ -7,10 +7,31 @@
     </div>
 
     <div class="item-card__meta">
-      <span>Qty: {{ item.quantity }}</span>
-      <span>Status: {{ item.isCompleted ? 'Done' : 'Active' }}</span>
-      <span>Category: {{ item.category }}</span>
-      <span>Description: {{ item.description }}</span>
+
+      <div class="meta-row">
+        Qty: {{ item.quantity }}
+      </div>
+
+      <div class="meta-row">
+        Status:
+        <span
+          class="status-badge"
+          [class.done]="item.isCompleted"
+          [class.active]="!item.isCompleted">
+          {{ item.isCompleted ? 'Done' : 'Active' }}
+        </span>
+      </div>
+
+      <div class="meta-row" *ngIf="item.category">
+        Category:
+        <span class="meta-value">{{ item.category }}</span>
+      </div>
+
+      <div class="meta-row" *ngIf="item.description">
+        Description:
+        <span class="meta-value">{{ item.description }}</span>
+      </div>
+
     </div>
 
     <div class="item-card__date">
@@ -21,9 +42,9 @@
 
   <div class="item-card__actions">
 
-    <button (click)="onEdit()">Edit</button>
+    <button class="btn-edit" (click)="onEdit()">Edit</button>
+    <button class="btn-delete" (click)="onDelete()">Delete</button>
 
-    <button (click)="onDelete()">Delete</button>
   </div>
 
 </div>
