@@ -1,0 +1,55 @@
+@use "variables" as *;
+
+.item-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: 8px;
+
+  padding: $space-4;
+
+  transition: 0.2s ease;
+}
+
+.item-card:hover {
+  transform: translateY(-2px);
+  border-color: $color-primary;
+}
+
+.item-card__main {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+}
+
+.item-card__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: $color-text-primary;
+}
+
+.item-card__meta {
+  display: flex;
+  gap: $space-4;
+  font-size: 12px;
+  color: $color-text-secondary;
+}
+
+.item-card__date {
+  font-size: 11px;
+  color: $color-text-secondary;
+}
+
+.item-card__actions button {
+  background: $color-danger;
+  color: white;
+
+  border: none;
+  padding: $space-2 $space-3;
+  border-radius: 6px;
+
+  cursor: pointer;
+}

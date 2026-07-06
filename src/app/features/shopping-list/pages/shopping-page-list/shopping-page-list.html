@@ -1,16 +1,23 @@
-<p>shopping-page-list works!</p>
+<div class="shopping-page">
 
-<div>
-    <button (click)="onAddItem()">Add item</button>
+  <div class="shopping-page__header">
 
-    <div>
-    <div *ngFor="let item of items$ | async">
-        
-        <app-shopping-item
-        [item]="item"
-        (delete)="onDeleteItem($event)">
-        </app-shopping-item>
+    <h2>My List</h2>
 
-    </div>
-    </div>
+    <button (click)="onAddItem()">
+      + Add item
+    </button>
+
+  </div>
+
+  <div class="shopping-page__list">
+
+    <app-shopping-item
+      *ngFor="let item of items$ | async"
+      [item]="item"
+      (delete)="onDeleteItem($event)">
+    </app-shopping-item>
+
+  </div>
+
 </div>

@@ -1,0 +1,38 @@
+@use "variables" as *;
+
+.header {
+  background: $color-surface;
+  border-bottom: 1px solid $color-border;
+}
+
+.header__container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  padding: $space-4;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  font-size: 20px;
+  font-weight: 600;
+  color: $color-text-primary;
+}
+
+.header__nav {
+  display: flex;
+  gap: $space-4;
+}
+
+.header__nav a {
+  text-decoration: none;
+  color: $color-text-secondary;
+  font-size: 14px;
+}
+
+.header__nav a:hover {
+  color: $color-primary;
+}

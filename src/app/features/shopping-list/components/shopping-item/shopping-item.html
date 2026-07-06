@@ -1,11 +1,24 @@
-<p>COOOOOLLL shopping-item works!</p>
+<div class="item-card">
 
+  <div class="item-card__main">
 
-<div>
-  <p>Title: {{ item.title }}</p>
-  <p>Quantity: {{ item.quantity }}</p>
-  <p>Completed: {{ item.isCompleted }}</p>
-  <p>Created: {{ item.createdAt }}</p>
+    <div class="item-card__title">
+      {{ item.title }}
+    </div>
 
-  <button (click)="onDelete()">Delete</button>
+    <div class="item-card__meta">
+      <span>Qty: {{ item.quantity }}</span>
+      <span>Status: {{ item.isCompleted ? 'Done' : 'Active' }}</span>
+    </div>
+
+    <div class="item-card__date">
+      Created: {{ item.createdAt | date:'short' }}
+    </div>
+
+  </div>
+
+  <div class="item-card__actions">
+    <button (click)="onDelete()">Delete</button>
+  </div>
+
 </div>

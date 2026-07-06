@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Item } from '../../../../core/item/models/item-model';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-shopping-item',
-  imports: [],
+  imports: [DatePipe],
   templateUrl: './shopping-item.html',
   styleUrl: './shopping-item.scss',
 })

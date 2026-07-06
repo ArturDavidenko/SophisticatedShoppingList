@@ -1,0 +1,36 @@
+@use "variables" as *;
+
+.shopping-page {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+}
+
+.shopping-page__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shopping-page__header h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.shopping-page__header button {
+  background: $color-primary;
+  color: white;
+
+  border: none;
+  border-radius: 6px;
+
+  padding: $space-3 $space-4;
+
+  cursor: pointer;
+}
+
+.shopping-page__list {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+}
