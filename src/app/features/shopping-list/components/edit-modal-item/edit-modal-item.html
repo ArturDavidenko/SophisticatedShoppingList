@@ -1,0 +1,62 @@
+<div class="modal-overlay" *ngIf="isOpen">
+
+  <form [formGroup]="form" class="modal">
+
+    <h2 class="modal__title">Edit Item</h2>
+
+    <div class="modal__body">
+
+      <div class="form-field">
+        <input formControlName="title" placeholder="Title" />
+      </div>
+
+      <div class="form-field">
+        <textarea formControlName="description" placeholder="Description"></textarea>
+      </div>
+
+      <div class="form-field">
+        <input type="number" formControlName="quantity" placeholder="Quantity" />
+      </div>
+
+      <div class="form-field form-field--checkbox">
+        <label>
+          <input type="checkbox" formControlName="isCompleted" />
+          Completed
+        </label>
+      </div>
+
+      <div class="form-field">
+        <input formControlName="category" placeholder="Category" />
+      </div>
+
+      <div class="form-field">
+        <input formControlName="imageUrl" placeholder="Image URL" />
+      </div>
+
+      <div class="form-field">
+        <input formControlName="productUrl" placeholder="Product URL" />
+      </div>
+
+    </div>
+
+    <div class="modal__actions">
+
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="onClose()">
+        Cancel
+      </button>
+
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="onSave()">
+        Save
+      </button>
+
+    </div>
+
+  </form>
+
+</div>

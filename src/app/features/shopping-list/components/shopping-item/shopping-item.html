@@ -9,6 +9,8 @@
     <div class="item-card__meta">
       <span>Qty: {{ item.quantity }}</span>
       <span>Status: {{ item.isCompleted ? 'Done' : 'Active' }}</span>
+      <span>Category: {{ item.category }}</span>
+      <span>Description: {{ item.description }}</span>
     </div>
 
     <div class="item-card__date">
@@ -18,6 +20,9 @@
   </div>
 
   <div class="item-card__actions">
+
+    <button (click)="onEdit()">Edit</button>
+
     <button (click)="onDelete()">Delete</button>
   </div>
 

@@ -12,8 +12,13 @@ export class ShoppingItem {
   @Input() item!: Item;
 
   @Output() delete = new EventEmitter<string>();
+  @Output() edit = new EventEmitter<Item>();
 
   onDelete(): void {
     this.delete.emit(this.item.id);
+  }
+
+  onEdit(): void {
+    this.edit.emit(this.item);
   }
 }
