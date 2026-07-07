@@ -52,7 +52,6 @@ export class AddModalItem {
       isCompleted: false,
       category: '',
       productUrl: ''
-
     });
   }
 
