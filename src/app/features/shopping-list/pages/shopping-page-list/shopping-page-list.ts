@@ -6,10 +6,11 @@ import { Item } from '../../../../core/item/models/item-model';
 import { CommonModule } from '@angular/common';
 import { FormBuilder } from '@angular/forms';
 import { EditModalItem } from "../../components/edit-modal-item/edit-modal-item";
+import { AddModalItem } from "../../components/add-modal-item/add-modal-item";
 
 @Component({
   selector: 'app-shopping-page-list',
-  imports: [ShoppingItem, CommonModule, EditModalItem],
+  imports: [ShoppingItem, CommonModule, EditModalItem, AddModalItem],
   templateUrl: './shopping-page-list.html',
   styleUrl: './shopping-page-list.scss',
 })
@@ -19,6 +20,7 @@ export class ShoppingPageList implements OnInit {
 
   selectedItem: Item | null = null;
   isEditOpen = false;
+  isAddOpen = false;
   
   constructor(private facade: ShoppingListFacade, private fb: FormBuilder) {
     this.items$ = this.facade.items$;
@@ -28,16 +30,9 @@ export class ShoppingPageList implements OnInit {
     this.facade.init();
   }
 
-  onAddItem(): void {
-    const newItem: Item = {
-      id: crypto.randomUUID(),
-      title: 'New item',
-      quantity: 1,
-      isCompleted: false,
-      createdAt: new Date(),
-    };
-
-    this.facade.addItem(newItem);
+  onCreate(item: Item): void {
+    this.facade.addItem(item);
+    this.isAddOpen = false;
   }
 
   onDeleteItem(id: string): void {
@@ -47,6 +42,14 @@ export class ShoppingPageList implements OnInit {
   onEditItem(item: Item): void {
     this.selectedItem = item;
     this.isEditOpen = true;
+  }
+
+  onOpenAdd(): void {
+    this.isAddOpen = true;
+  }
+
+  onCloseAdd(): void {
+    this.isAddOpen = false;
   }
 
   onSave(updated: Item): void {

@@ -4,7 +4,7 @@
 
     <h2>My List</h2>
 
-    <button (click)="onAddItem()">
+    <button (click)="onOpenAdd()">
       + Add item
     </button>
 
@@ -29,3 +29,9 @@
   (save)="onSave($event)"
   (close)="isEditOpen=false">
 </app-edit-modal-item>
+
+<app-add-modal-item
+    [isOpen]="isAddOpen"
+    (create)="onCreate($event)"
+    (close)="isAddOpen = false">
+</app-add-modal-item>

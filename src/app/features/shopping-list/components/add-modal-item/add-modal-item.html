@@ -1,0 +1,101 @@
+<div 
+    class="modal-overlay"
+    *ngIf="isOpen">
+
+    <form
+        class="modal"
+        [formGroup]="form">
+
+        <h2>
+            Add Item
+        </h2>
+
+        <div class="modal__body">
+            <div class="form-field">
+                <label>
+                    Title
+                </label>
+
+                <input
+                    type="text"
+                    formControlName="title"
+                    placeholder="Enter item name">
+            </div>
+
+
+
+            <div class="form-field">
+                <label>
+                    Description
+                </label>
+
+                <textarea
+                    formControlName="description"
+                    placeholder="Enter description">
+                </textarea>
+            </div>
+
+            <div class="form-field">
+
+                <label>
+                    Quantity
+                </label>
+
+                <input
+                    type="number"
+                    formControlName="quantity"
+                    min="1">
+            </div>
+
+
+
+            <div class="form-field checkbox-field">
+                <label>
+                    <input
+                        type="checkbox"
+                        formControlName="isCompleted">
+                    Completed
+                </label>
+            </div>
+
+            <div class="form-field">
+                <label>
+                    Category
+                </label>
+
+                <input
+                    type="text"
+                    formControlName="category"
+                    placeholder="Food, tools, electronics...">
+            </div>
+            
+            <div class="form-field">
+                <label>
+                    Product URL
+                </label>
+
+                <input
+                    type="text"
+                    formControlName="productUrl"
+                    placeholder="https://shop.com/product">
+            </div>
+        </div>
+
+
+        <div class="modal__actions">
+            <button
+                type="button"
+                class="btn btn-secondary"
+                (click)="onClose()">
+                Cancel
+            </button>
+
+            <button
+                type="button"
+                class="btn btn-primary"
+                (click)="onCreate()">
+                Create
+            </button>
+        </div>
+    </form>
+</div>
